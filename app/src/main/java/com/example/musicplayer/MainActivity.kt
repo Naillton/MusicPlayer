@@ -47,13 +47,14 @@ class MainActivity : AppCompatActivity() {
 
         skBar.isClickable = false
 
-        // setando o nome da musica
-        musicText.text = resources.getIdentifier(
+        // usando o resource getIdentifier para pegar o id da musica e em seguida
+        // setar o nome usando o getResourceEntryName() passando o id recebido como parametro
+        val id: Int = resources.getIdentifier(
             "cannibalcorpse_srs",
             "raw",
             packageName
-        ).toString()
-
+        )
+        musicText.text = resources.getResourceEntryName(id)
 
         // definindo funcoes do botao de play
         play.setOnClickListener(){
